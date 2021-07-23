@@ -135,17 +135,21 @@ module.exports.getCalendarEvents = async (event) => {
  *  scopes are the ones users will see when the consent screen is displayed to them.
  *
  */
-const authUrl = oAuth2Client.generateAuthUrl({
-  access_type: "offline",
-  scope: SCOPES,
-});
 
-return {
-  statusCode: 200,
-  headers: {
-    'Access-Control-Allow-Origin': '*'
-  },
-  body: JSON.stringify({
-    authUrl: authUrl,
-  }),
+module.exports.getAuthURL = async () => {
+
+  const authUrl = oAuth2Client.generateAuthUrl({
+    access_type: "offline",
+    scope: SCOPES,
+  });
+
+  return {
+    statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({
+      authUrl: authUrl,
+    }),
+  };
 };
