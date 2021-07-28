@@ -11,23 +11,23 @@ class Event extends Component {
   };
 
   handleButton = () => {
-    this.setState = { show: !this.state.show };
+    this.setState((prevState) => ({ show: !prevState.show }));
   };
 
 
   render() {
     return (
       <div className='event'>
-        <li className='summary'>{this.state.summary}</li>
-        <li className='location'>{this.state.location}</li>
-        <li className='organizer'>{this.state.organizer}</li>
-        <li className='date'>{this.state.date}</li>
-        <li className='timeZone'>{this.state.timeZone}</li>
+        <p className='summary'>Event{this.state.summary}</p>
+        <p className='location'>Location{this.state.location}</p>
+        <p className='organizer'>Organizer{this.state.organizer}</p>
+        <p className='date'>Date{this.state.date}</p>
+        <p className='timeZone'>Time{this.state.timeZone}</p>
         {this.state.show === true && (
-          <li className='details'>{this.state.description}</li>
+          <p className='details'>Details{this.state.description}</p>
         )}
         <button className='showMoreLess' onClick={() => this.handleButton()}>
-        </button>
+          Show more/less</button>
       </div>
     );
   };
