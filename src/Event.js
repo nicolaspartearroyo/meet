@@ -2,11 +2,6 @@ import React, { Component } from "react";
 
 class Event extends Component {
   state = {
-    summary: "",
-    description: "",
-    location: "",
-    date: "",
-    timeZone: "",
     show: false,
   };
 
@@ -14,24 +9,30 @@ class Event extends Component {
     this.setState((prevState) => ({ show: !prevState.show }));
   };
 
-
   render() {
+    let event = this.props.event;
+
     return (
-      <div className='event'>
-        <p className='summary'>Event{this.state.summary}</p>
-        <p className='location'>Location{this.state.location}</p>
-        <p className='organizer'>Organizer{this.state.organizer}</p>
-        <p className='date'>Date{this.state.date}</p>
-        <p className='timeZone'>Time{this.state.timeZone}</p>
+      <div className="event">
+        <h1 className="summary">{event.summary}</h1>
+        <h2 className="location">{event.location}</h2>
+        <h3 className="date">{event.start.dateTime}</h3>
+        <h3 className="timeZone">{event.start.timeZone}</h3>
         {this.state.show === true && (
-          <p className='details'>Details{this.state.description}</p>
+          <p className="details">{event.description}</p>
         )}
-        <button className='showMoreLess' onClick={() => this.handleButton()}>
-          Show more/less</button>
+        {this.state.show === false && (
+          <button className="showMore" onClick={() => this.handleButton()}>
+            Show more
+          </button>
+        )}
+        {this.state.show === true && (
+          <button className="showLess" onClick={() => this.handleButton()}>
+            Show less
+          </button>
+        )}
       </div>
     );
-  };
-};
-
+  }
+}
 export default Event;
-
