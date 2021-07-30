@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class Event extends Component {
   state = {
     show: false,
+
   };
 
   handleButton = () => {
@@ -10,14 +11,14 @@ class Event extends Component {
   };
 
   render() {
-    let event = this.props.event;
+    const event = this.props.event;
 
     return (
-      <div className="event">
-        <h1 className="summary">{event.summary}</h1>
-        <h2 className="location">{event.location}</h2>
-        <h3 className="date">{event.start.dateTime}</h3>
-        <h3 className="timeZone">{event.start.timeZone}</h3>
+      <ul className="event">
+        <li className="summary">{event.summary}</li>
+        <li className="location">{event.location}</li>
+        <li className="date">{event.start.dateTime}</li>
+        <li className="timeZone">{event.start.timeZone}</li>
         {this.state.show === true && (
           <p className="details">{event.description}</p>
         )}
@@ -31,7 +32,7 @@ class Event extends Component {
             Show less
           </button>
         )}
-      </div>
+      </ul>
     );
   }
 }

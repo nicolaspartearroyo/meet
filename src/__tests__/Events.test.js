@@ -8,16 +8,16 @@ describe('<Event /> component', () => {
   beforeAll(() => {
     EventWrapper = shallow(<Event />);
   });
-  test('Summary is render', () => {
+  test('summary is render', () => {
     expect(EventWrapper.find('.summary')).toHaveLength(1);
   });
-  test('Location is render', () => {
+  test('location is render', () => {
     expect(EventWrapper.find('.location')).toHaveLength(1);
   });
-  test('Date is render', () => {
+  test('date is render', () => {
     expect(EventWrapper.find('.date')).toHaveLength(1);
   });
-  test('Time is render', () => {
+  test('time is render', () => {
     expect(EventWrapper.find('.timeZone')).toHaveLength(1);
   });
   // test('Show more/less button is render', () => {
