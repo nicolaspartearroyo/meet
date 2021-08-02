@@ -14,12 +14,12 @@ class Event extends Component {
 
     return (
       <ul className="event">
-        <li className="summary">{Event.summary}</li>
-        <li className="location">{Event.location}</li>
-        <li className="date">{Event.start.dateTime}</li>
-        <li className="timeZone">{Event.start.timeZone}</li>
+        <li className="summary">{event.summary}</li>
+        <li className="location">{event.location}</li>
+        <li className="date">{event.start.dateTime}</li>
+        <li className="timeZone">{event.start.timeZone}</li>
         {this.state.show === true && (
-          <p className="details">{Event.description}</p>
+          <p className="details">{event.description}</p>
         )}
         {this.state.show === false && (
           <button className="showMore" onClick={() => this.handleButton()}>
