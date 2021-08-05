@@ -47,6 +47,7 @@
     "jest": "^20.0.4",
     "jest-cucumber": "^3.0.1",
     "jsdom": "16.6.0",
-    "jsdom-global": "3.0.2"
+    "jsdom-global": "3.0.2",
+    "puppeteer": "^10.2.0"
   }
 }
