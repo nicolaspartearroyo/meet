@@ -1,11 +1,14 @@
 
 import React, { Component } from 'react';
+import { mockData } from './mock-data';
 import './App.css';
 import './EventList';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+
+// const locations = extractLocations(mockData);
 
 class App extends Component {
   state = {
@@ -18,7 +21,9 @@ class App extends Component {
     this.mounted = true;
     getEvents().then((events) => {
       if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
+        // this.setState({ events, locations: extractLocations(events) });
+        this.setState({ events, locations: extractLocations(mockData) });
+
       }
     });
   }

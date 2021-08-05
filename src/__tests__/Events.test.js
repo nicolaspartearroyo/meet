@@ -4,9 +4,10 @@ import Event from '../Event';
 import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
-  let EventWrapper;
+  let event, EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event />);
+    event = mockData[0];
+    EventWrapper = shallow(<Event event={event} />);
   });
   test('summary is render', () => {
     expect(EventWrapper.find('.summary')).toHaveLength(1);
@@ -20,21 +21,18 @@ describe('<Event /> component', () => {
   test('time is render', () => {
     expect(EventWrapper.find('.timeZone')).toHaveLength(1);
   });
-  // test('Show more/less button is render', () => {
-  //   expect(EventWrapper.find('.showMoreLess')).toHaveLength(1);
+  // test('Show details on click', () => {
+  //   EventWrapper.setState({
+  //     show: false,
+  //   });
+  //   EventWrapper.find('.showMore').simulate('click');
+  //   expect(EventWrapper.find('.showMore')).toHaveLength(1);
   // });
-  test('Show details on click', () => {
-    EventWrapper.setState({
-      show: false,
-    });
-    EventWrapper.find('.showMore').simulate('click');
-    expect(EventWrapper.find('.showMore')).toHaveLength(1);
-  });
-  test('Hide details on click', () => {
-    EventWrapper.setState({
-      show: true,
-    });
-    EventWrapper.find('.showLess').simulate('click');
-    expect(EventWrapper.find('.showLess')).toHaveLength(1);
-  });
+  // test('Hide details on click', () => {
+  //   EventWrapper.setState({
+  //     show: true,
+  //   });
+  //   EventWrapper.find('.showLess').simulate('click');
+  //   expect(EventWrapper.find('.showLess')).toHaveLength(1);
+  // });
 });

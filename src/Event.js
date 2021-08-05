@@ -11,7 +11,6 @@ class Event extends Component {
 
   render() {
     const event = this.props.event;
-
     return (
       <ul className="event">
         <li className="summary">{event.summary}</li>
@@ -35,4 +34,5 @@ class Event extends Component {
     );
   }
 }
+
 export default Event;
