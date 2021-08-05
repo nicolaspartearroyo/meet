@@ -14,6 +14,7 @@
 //   return locations;
 // };
 
+import 'jsdom-global/register';
 
 import { mockData } from "./mock-data";
 import axios from "axios";

@@ -1,4 +1,4 @@
-import './nprogress.css';
+
 import React, { Component } from 'react';
 import './App.css';
 import './EventList';
