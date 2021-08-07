@@ -21,7 +21,7 @@ defineFeature(feature, test => {
     });
 
     then('thirty two events max will be shown', () => {
-      expect(AppWrapper.state("events").length).toBe(mockData.length);
+      expect(AppWrapper.state('numberOfEvents').length).toBe(mockData.length);
     });
   });
 
@@ -32,11 +32,11 @@ defineFeature(feature, test => {
 
     when('user change the number of events', () => {
     });
-    AppWrapper.find('.eventNum').simulate('change', { target: { value: '1' } });
+    NumberOfEventWrapper.find('.eventNum').simulate('change', { target: { value: '1' } });
 
     then('number of events will change', () => {
       AppWrapper.update();
-      expect(AppWrapper.state("events").length).toBe(1);
+      expect(AppWrapper.state('events').length).toBe(1);
     });
   });
 
