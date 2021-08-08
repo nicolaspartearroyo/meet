@@ -3,7 +3,6 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from '../App';
 import Event from '../Event';
-import EventList from '../EventList';
 import { mockData } from '../mock-Data';
 
 const feature = loadFeature('./src/features/showHideEventDetails.feature');
@@ -11,7 +10,6 @@ const feature = loadFeature('./src/features/showHideEventDetails.feature');
 
 defineFeature(feature, test => {
   let AppWrapper;
-  let EventListWrapper;
   let EventWrapper;
 
   test('An event element is collapsed by default', ({ given, when, then }) => {
@@ -44,6 +42,9 @@ defineFeature(feature, test => {
   test('User can collapse an event to hide its details', ({ given, when, then }) => {
     given('user is seeing the events detail expanded', () => {
       EventWrapper = shallow(<Event event={mockData[1]} />);
+      EventWrapper.setState({
+        show: true,
+      });
     });
 
     when('a user click on the event details', () => {

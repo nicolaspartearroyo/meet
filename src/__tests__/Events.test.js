@@ -21,18 +21,18 @@ describe('<Event /> component', () => {
   test('time is render', () => {
     expect(EventWrapper.find('.timeZone')).toHaveLength(1);
   });
-  // test('Show details on click', () => {
-  //   EventWrapper.setState({
-  //     show: false,
-  //   });
-  //   EventWrapper.find('.showMore').simulate('click');
-  //   expect(EventWrapper.find('.showMore')).toHaveLength(1);
-  // });
-  // test('Hide details on click', () => {
-  //   EventWrapper.setState({
-  //     show: true,
-  //   });
-  //   EventWrapper.find('.showLess').simulate('click');
-  //   expect(EventWrapper.find('.showLess')).toHaveLength(1);
-  // });
+  test('Show details on click', () => {
+    EventWrapper.setState({
+      show: false,
+    });
+    EventWrapper.find('.showMore').simulate('click');
+    expect(EventWrapper.find('.showMore')).toBeTruthy();
+  });
+  test('Hide details on click', () => {
+    EventWrapper.setState({
+      show: true,
+    });
+    EventWrapper.find('.showLess').simulate('click');
+    expect(EventWrapper.find('.showLess')).toBeTruthy();
+  });
 });

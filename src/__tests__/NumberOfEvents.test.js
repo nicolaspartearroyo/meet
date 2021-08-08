@@ -11,7 +11,7 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('.eventNum')).toHaveLength(1);
   });
   test('render 32 events by default', () => {
-    expect(NumberOfEventsWrapper.find('.eventNum').prop('value')).toEqual(32);
+    expect(NumberOfEventsWrapper.find(".eventNum").prop("value")).toEqual(32)
   });
   test('renders input correctly', () => {
     const numberOfEvents = NumberOfEventsWrapper.state('numberOfEvents');
