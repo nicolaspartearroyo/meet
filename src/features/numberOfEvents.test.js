@@ -8,6 +8,7 @@ import { mockData } from '../mock-Data';
 const feature = loadFeature('./src/features/numberOfEvents.feature');
 
 defineFeature(feature, test => {
+  let AppWrapper;
   const NumberOfEventsWrapper = mount(<NumberOfEvents />);
 
   test('When user hasn’t specified a number, 32 is the default number', ({ given, when, then }) => {
@@ -19,7 +20,7 @@ defineFeature(feature, test => {
     });
 
     then('thirty two events will be shown', () => {
-      expect(NumberOfEventsWrapper.state('numberOfEvents').lenght).toBe(32);
+      expect(AppWrapper.state("events").length).toBe(mockData.length);
     });
   });
 
