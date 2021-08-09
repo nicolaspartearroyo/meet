@@ -3,7 +3,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from '../App';
 import Event from '../Event';
-import { mockData } from '../mock-Data';
+import { mockData } from '../mock-data';
 
 const feature = loadFeature('./src/features/showHideEventDetails.feature');
 

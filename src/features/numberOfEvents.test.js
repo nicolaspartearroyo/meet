@@ -3,7 +3,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import App from '../App';
 import NumberOfEvents from "../NumberOfEvents";
-import { mockData } from '../mock-Data';
+import { mockData } from '../mock-data';
 
 const feature = loadFeature('./src/features/numberOfEvents.feature');
 
