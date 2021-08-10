@@ -1,12 +1,11 @@
 
 import React, { Component } from 'react';
-import { mockData } from './mock-data';
 import './App.css';
 import './EventList';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
+import { getEvents, extractLocations, checkToken } from './api';
 
 class App extends Component {
   state = {
@@ -48,10 +47,12 @@ class App extends Component {
     });
   }
 
-  updateNumberOfEvents(eventNumber) {
-    this.setState({ numberOfEvents: eventNumber });
-    const { currentCity } = this.state;
-    this.updateEvents(currentCity, eventNumber);
+  updateEventCount = (eventCount) => {
+    const { currentLocation } = this.state;
+    this.setState({
+      numberOfEvents: eventCount
+    });
+    this.updateEvents(currentLocation, eventCount);
   }
 
   render() {
@@ -62,7 +63,7 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-        <NumberOfEvents numberOfEvents={numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+        <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
       </div>
     );
   }
