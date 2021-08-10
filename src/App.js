@@ -48,6 +48,7 @@ class App extends Component {
     this.updateEvents(currentLocation, eventCount);
   }
   render() {
+    const { numberOfEvents } = this.state;
     return (
       <div className="App">
         <CitySearch
