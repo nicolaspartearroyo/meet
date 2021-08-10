@@ -8,8 +8,6 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 
-// const locations = extractLocations(mockData);
-
 class App extends Component {
   state = {
     events: [],
@@ -21,7 +19,6 @@ class App extends Component {
     this.mounted = true;
     getEvents().then((events) => {
       if (this.mounted) {
-        // this.setState({ events, locations: extractLocations(events) });
         this.setState({ events, locations: extractLocations(mockData) });
 
       }
@@ -47,7 +44,7 @@ class App extends Component {
       <div className="App">
         <CitySearch
           locations={this.state.locations}
-          updateEvents={this.updateEvents} />
+          updateEvents={this.state.updateEvents} />
         <EventList events={this.state.events} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} />
       </div>
