@@ -40,6 +40,13 @@ class App extends Component {
     });
   }
 
+  updateEventCount = (eventCount) => {
+    const { currentLocation } = this.state;
+    this.setState({
+      numberOfEvents: eventCount
+    });
+    this.updateEvents(currentLocation, eventCount);
+  }
   render() {
     return (
       <div className="App">
@@ -47,7 +54,7 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} />
+        <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
       </div>
     );
   }
