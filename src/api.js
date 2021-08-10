@@ -20,7 +20,7 @@ import axios from "axios";
 import NProgress from "nprogress";
 import "./nprogress.css";
 
-const checkToken = async (accessToken) => {
+export const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   )
