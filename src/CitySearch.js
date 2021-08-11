@@ -6,7 +6,8 @@ class CitySearch extends Component {
     locations: this.props.locations,
     query: '',
     suggestions: [],
-    showSuggestions: undefined
+    showSuggestions: false,
+    infoText: '',
   }
   handleInputChanged = (event) => {
     const value = event.target.value;
@@ -27,6 +28,7 @@ class CitySearch extends Component {
       });
     }
   };
+
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
