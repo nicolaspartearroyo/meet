@@ -11,7 +11,7 @@ class NumberOfEvents extends Component {
     const value = event.target.value;
     this.setState({ numberOfEvents: value });
     this.props.updateEventCount(event.target.value);
-    if (numberOfEvents.length <= 0) {
+    if (value.length <= 0) {
       this.setState({
         infoText: 'Select a number from 1 to 32.'
       });
