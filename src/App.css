@@ -41,7 +41,7 @@ input[type="number"] {
   font-size: 18px;
 }
 
-.button {
+.button.showMore .button.showLess {
   margin-top: 5px;
 }
 
