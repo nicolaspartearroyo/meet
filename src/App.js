@@ -5,13 +5,15 @@ import './EventList';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { getEvents, extractLocations, checkToken } from './api';
+import WelcomeScreen from './WelcomeScreen';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    showWelcomeScreen: undefined
   }
 
   async componentDidMount() {
@@ -56,6 +58,7 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.showWelcomeScreen === undefined);
     const { numberOfEvents } = this.state;
     return (
       <div className="App">
@@ -64,8 +67,9 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
-        <div></div>
         <EventList events={this.state.events} />
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }
