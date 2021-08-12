@@ -29,17 +29,17 @@ const removeQuery = () => {
 
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
-  try {
-    const res = await fetch(
-      "https://dxchgdtgc1.execute-api.eu-central-1.amazonaws.com/dev/api/token/" +
-      encodeCode
-    )
-    const { access_token } = await res.json();
-    console.log(access_token, 'tokeniser')
-    return access_token
-  } catch (error) {
-    console.error(error)
-  }
+  const { access_token } = await fetch(
+    `https://dxchgdtgc1.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => error);
+
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
 };
 
 export const getAccessToken = async () => {
