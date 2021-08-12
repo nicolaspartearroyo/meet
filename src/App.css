@@ -61,7 +61,7 @@ input[type="number"] {
 }
 
 .suggestions > li {
-  text-align: left;
+  text-align: center;
   padding: 8px 6px 8px 10px;
   background-color: #eee;
   cursor: default;
