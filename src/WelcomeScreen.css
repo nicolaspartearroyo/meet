@@ -1,5 +1,6 @@
 .WelcomeScreen {
   position: fixed;
+  text-align: center;
   width: 100%;
   height: 100%;
   top: 0;
