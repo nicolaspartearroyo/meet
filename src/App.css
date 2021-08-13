@@ -138,8 +138,10 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  position: relative;
+  min-height: 40px;
+  max-width: 100%;
+  margin: 5px;
 }
 
 .data-vis-wrapper {

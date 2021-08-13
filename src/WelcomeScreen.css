@@ -5,6 +5,10 @@
   top: 0;
   background: white;
   margin-top: 20%;
+  padding: 0%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   }
   .login-button {
