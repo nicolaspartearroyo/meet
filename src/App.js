@@ -8,7 +8,7 @@ import NumberOfEvents from './NumberOfEvents';
 import WelcomeScreen from './WelcomeScreen';
 
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
-import { OfflineAlert } from './Alert';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -89,7 +89,7 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
-        <OfflineAlert text={this.state.infoText} className="InfoAlert" />
+        <WarningAlert text={this.state.infoText} className="InfoAlert" />
         <EventList events={this.state.events} />
       </div>
     );
