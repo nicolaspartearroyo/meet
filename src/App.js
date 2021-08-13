@@ -75,7 +75,7 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
-        <OfflineAlert text={networkText} />
+        <OfflineAlert class="Alert" text={networkText} />
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => { getAccessToken() }} />
