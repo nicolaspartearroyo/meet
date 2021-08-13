@@ -6,7 +6,6 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import WelcomeScreen from './WelcomeScreen';
-import { OfflineAlert } from './Alert';
 
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 
@@ -33,11 +32,6 @@ class App extends Component {
             locations: extractLocations(events)
           });
         }
-        if (!navigator.onLine) {
-          this.setState({ networkText: <div className="networkNotification">Offline</div> });
-        } else {
-          this.setState({ networkText: '' });
-        };
       });
     }
   }
@@ -67,7 +61,7 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined);
-    const { numberOfEvents, networkText } = this.state;
+    const { numberOfEvents } = this.state;
     return (
       <div className="App">
         <h1>Meet App</h1>
@@ -75,7 +69,6 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
-        <OfflineAlert class="Alert" text={networkText} />
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => { getAccessToken() }} />
