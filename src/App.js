@@ -1,11 +1,13 @@
-
 import React, { Component } from 'react';
 import './App.css';
 import './EventList';
+import './nprogress.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import WelcomeScreen from './WelcomeScreen';
+import { OfflineAlert } from './Alert';
+
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 
 class App extends Component {
@@ -22,6 +24,7 @@ class App extends Component {
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
@@ -30,6 +33,11 @@ class App extends Component {
             locations: extractLocations(events)
           });
         }
+        if (!navigator.onLine) {
+          this.setState({ networkText: <div className="networkNotification">Offline</div> });
+        } else {
+          this.setState({ networkText: '' });
+        };
       });
     }
   }
@@ -59,7 +67,7 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined);
-    const { numberOfEvents } = this.state;
+    const { numberOfEvents, networkText } = this.state;
     return (
       <div className="App">
         <h1>Meet App</h1>
@@ -67,6 +75,7 @@ class App extends Component {
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
+        <OfflineAlert text={networkText} />
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => { getAccessToken() }} />

@@ -3,12 +3,6 @@ import axios from "axios";
 import NProgress from "nprogress";
 import "./nprogress.css";
 
-export const extractLocations = (events) => {
-  var extractLocations = events.map((event) => event.location);
-  var locations = [...new Set(extractLocations)];
-  return locations;
-};
-
 export const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
@@ -96,7 +90,9 @@ export const getEvents = async () => {
     NProgress.done();
     return result.data.events;
   }
-
 };
-
-
+export const extractLocations = (events) => {
+  var extractLocations = events.map((event) => event.location);
+  var locations = [...new Set(extractLocations)];
+  return locations;
+};
