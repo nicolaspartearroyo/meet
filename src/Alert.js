@@ -4,7 +4,6 @@ class Alert extends Component {
   constructor(props) {
     super(props);
     this.color = null;
-    this.position = null
   }
 
   getStyle = () => {
@@ -26,7 +25,6 @@ class InfoAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = 'blue';
-    this.position = "relative";
 
   }
 }
@@ -36,7 +34,6 @@ class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = 'red';
-    this.position = "relative";
 
   }
 }
@@ -46,7 +43,6 @@ class OfflineAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = 'red';
-    this.position = "relative";
 
   }
 }
