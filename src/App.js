@@ -40,6 +40,8 @@ class App extends Component {
           infoText:
             "No Internet Connection",
         });
+        console.log("Offline");
+
       } else {
         this.setState({
           infoText: "",
@@ -85,11 +87,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Meet App</h1>
+        <WarningAlert text={this.state.infoText} />
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount} />
-        <WarningAlert text={this.state.infoText} className="InfoAlert" />
         <EventList events={this.state.events} />
       </div>
     );
