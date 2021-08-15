@@ -8,6 +8,9 @@ class NumberOfEvents extends Component {
   }
 
   handleInputChanged = (event) => {
+    if (event.target.value === '') {
+      return;
+    }
     const value = parseInt(event.target.value, 10);
     // this.props.updateEventCount(event.target.value);
     if (value <= 0 || value > 32) {
