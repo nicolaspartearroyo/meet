@@ -107,7 +107,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
           numberOfEvents={numberOfEvents}
         />
-        <h4>Events in each city</h4>
+        <h2>Events in each city</h2>
         <ResponsiveContainer height={400} >
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
             <CartesianGrid />
