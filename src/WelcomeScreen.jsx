@@ -1,6 +1,6 @@
 import React from "react";
 import './WelcomeScreen.css';
-import { Container, Row, Col } from 'react-bootstrap/Card';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ?
