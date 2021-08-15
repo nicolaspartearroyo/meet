@@ -88,15 +88,15 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.showWelcomeScreen)
-      return (
-        <WelcomeScreen
-          showWelcomeScreen={this.state.showWelcomeScreen}
-          getAccessToken={() => {
-            getAccessToken();
-          }}
-        />
-      );
+    // if (this.state.showWelcomeScreen)
+    //   return (
+    //     <WelcomeScreen
+    //       showWelcomeScreen={this.state.showWelcomeScreen}
+    //       getAccessToken={() => {
+    //         getAccessToken();
+    //       }}
+    //     />
+    //   );
     const { locations, numberOfEvents } = this.state;
     return (
       <div className="App">
