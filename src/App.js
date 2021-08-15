@@ -88,15 +88,15 @@ class App extends Component {
   };
 
   render() {
-    // if (this.state.showWelcomeScreen)
-    //   return (
-    //     <WelcomeScreen
-    //       showWelcomeScreen={this.state.showWelcomeScreen}
-    //       getAccessToken={() => {
-    //         getAccessToken();
-    //       }}
-    //     />
-    //   );
+    if (this.state.showWelcomeScreen)
+      return (
+        <WelcomeScreen
+          showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
+        />
+      );
     const { locations, numberOfEvents } = this.state;
     return (
       <div className="App">
@@ -108,6 +108,7 @@ class App extends Component {
           numberOfEvents={numberOfEvents}
         />
         <h4>Events in each city</h4>
+
         <ScatterChart
           width={400}
           height={400}
@@ -121,6 +122,7 @@ class App extends Component {
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
+
         <EventList events={this.state.events} />
       </div>
     );
