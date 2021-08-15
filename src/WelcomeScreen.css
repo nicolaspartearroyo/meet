@@ -1,8 +1,3 @@
-body {
-  background-image: url("./img/background.jpg");
-  height: 200px;
-}
-
 .WelcomeScreen {
   position: fixed;
   text-align: center;
@@ -11,6 +6,8 @@ body {
   top: 0;
   padding: 0%;
   display: block;
+  background-image: url("./img/background.jpg");
+
   }
   .login-button {
   color: #494949;
