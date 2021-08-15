@@ -1,10 +1,14 @@
+body {
+  background-image: url("./img/background.jpg");
+  height: 200px;
+}
+
 .WelcomeScreen {
   position: fixed;
   text-align: center;
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: url("./img/background.jpg");
   padding: 0%;
   display: block;
   }

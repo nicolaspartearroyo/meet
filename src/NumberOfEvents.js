@@ -8,20 +8,20 @@ class NumberOfEvents extends Component {
   }
 
   handleInputChanged = (event) => {
-    const value = event.target.value;
-    this.props.updateEventCount(event.target.value);
-    if (value.length <= 0 || value.length > 32) {
+    const value = parseInt(event.target.value, 10);
+    // this.props.updateEventCount(event.target.value);
+    if (value <= 0 || value > 32) {
       this.setState({
-        infoText: 'Select a number from 1 to 32.',
-        numberOfEvents: ''
-      })
-    } else {
-      return this.setState({
-        numberOfEvents: value,
-        infoText: ''
+        infoText: 'Select a number from 1 to 32.'
       });
+      return;
     }
-  };
+    this.setState({
+      numberOfEvents: value,
+      infoText: ''
+    });
+    this.props.updateEventCount(value);
+  }
 
 
   render() {
