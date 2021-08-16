@@ -5,6 +5,7 @@ import './nprogress.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import WelcomeScreen from './WelcomeScreen';
 
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
@@ -108,6 +109,7 @@ class App extends Component {
           numberOfEvents={numberOfEvents}
         />
         <div className="data-vis-wrapper">
+          <EventGenre events={events} />
           <h2>Events in each city</h2>
           <ResponsiveContainer height={400} >
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
