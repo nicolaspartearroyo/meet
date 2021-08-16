@@ -97,14 +97,12 @@ input[type="number"] {
 
 button {
   position: absolute;
-  margin-top: 2px;;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  color: #4285f4;
 }
 
 .name {
