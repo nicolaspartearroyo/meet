@@ -104,10 +104,14 @@ class App extends Component {
       <div className="App">
         <WarningAlert text={this.state.infoText} />
         <img src={logo} alt="Logo" class="logo" />
-        <CitySearch updateEvents={this.updateEvents} locations={locations} />
+        <CitySearch
+          locations={locations}
+          updateEvents={this.updateEvents}
+          numberOfEvents={this.state.numberOfEvents}
+        />
         <NumberOfEvents
           updateEvents={this.updateEvents}
-          numberOfEvents={numberOfEvents}
+          numberOfEvents={this.state.numberOfEvents}
         />
         <div className="data-vis-wrapper">
           <EventGenre events={events} />
