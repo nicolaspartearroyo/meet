@@ -97,7 +97,7 @@ class App extends Component {
           }}
         />
       );
-    const { locations, numberOfEvents } = this.state;
+    const { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
         <WarningAlert text={this.state.infoText} />
@@ -122,7 +122,7 @@ class App extends Component {
             <Scatter data={this.getData()} fill="#8884d8" />
           </ScatterChart>
         </ResponsiveContainer>
-        <EventList events={this.state.events} />
+        <EventList events={events} />
       </div>
     );
   }
