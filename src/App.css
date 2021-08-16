@@ -65,6 +65,7 @@ input[type="number"] {
   position: absolute;
   z-index: 2;
   align-self: center;
+  margin-top: 0;
   margin-left: 25px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
