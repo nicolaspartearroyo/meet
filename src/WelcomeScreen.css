@@ -1,5 +1,7 @@
 body {
   background-image: url("./img/background.jpg");
+  background-position: center;
+
 }
 
 .WelcomeScreen {

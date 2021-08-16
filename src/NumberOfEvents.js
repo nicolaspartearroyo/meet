@@ -7,14 +7,6 @@ class NumberOfEvents extends Component {
     infoText: '',
   }
 
-  updateEventCount = (eventCount) => {
-    const { currentLocation } = this.state;
-    this.setState({
-      numberOfEvents: eventCount
-    });
-    this.updateEvents(currentLocation, eventCount);
-  }
-
   handleInputChanged = (event) => {
     if (event.target.value === '') {
       return;
