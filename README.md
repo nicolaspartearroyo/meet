@@ -1,5 +1,5 @@
 <h1>Meet App</h1>
-<p>TA serverless PWA using Create React App that can display and filter meetup events from the Google calender API. It is developed using Test-Drive-Development techniques to ensure a high test coverage rate.</p>
+<p>A serverless PWA using Create React App that can display and filter meetup events from the Google calender API. It is developed using Test-Drive-Development techniques to ensure a high test coverage rate.</p>
 
 <h3>Featured 1: FILTER EVENTS BY CITY</h3>
 <p>As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.</p>
