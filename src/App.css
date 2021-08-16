@@ -3,15 +3,11 @@
   text-align: center;
   padding: 2% 5%;
   background-color: white;
-  margin: 5px;
+  margin: 10px;
 }
 
 .App * {
   box-sizing: border-box;
-}
-
-.data-vis-wrapper {
-  position: center;
 }
 
 ul {
