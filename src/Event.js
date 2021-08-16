@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from 'react-bootstrap';
+import Button from 'react-bootstrap/button';
 
 class Event extends Component {
   state = {
