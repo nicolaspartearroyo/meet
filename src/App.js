@@ -58,25 +58,24 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
+    let locationEvents;
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-        events :
-        events.filter((event) => event.location === location);
-      const { numberOfEvents } = this.state;
+      if (location === 'all' && eventCount === 0) {
+        locationEvents = events;
+      } else if (location !== 'all' && eventCount === 0) {
+        locationEvents = events.filter((event) => event.location === location);
+      } else if (location === '' && eventCount > 0) {
+        locationEvents = events.slice(0, eventCount);
+      } else if (location === '' && eventCount === '') {
+        locationEvents = events;
+      }
       this.setState({
-        events: locationEvents.slice(0, numberOfEvents)
+        events: locationEvents,
+        numberOfEvents: eventCount,
       });
     });
-  }
-
-  updateEventCount = (eventCount) => {
-    const { currentLocation } = this.state;
-    this.setState({
-      numberOfEvents: eventCount
-    });
-    this.updateEvents(currentLocation, eventCount);
-  }
+  };
 
   // Count how many events has each city
   getData = () => {
