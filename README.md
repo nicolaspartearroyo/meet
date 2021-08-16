@@ -1,7 +1,7 @@
 <h1>Meet App</h1>
 <p>A serverless PWA using Create React App that can display and filter meetup events from the Google calender API. It is developed using Test-Drive-Development techniques to ensure a high test coverage rate.</p>
 
-<div style="width:500px;max-width:100%;"><div style="height:0;padding-bottom:57.6%;position:relative;"><iframe width="500" height="288" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/5jsayg"></iframe></div><p><a href="https://imgflip.com/gif/5jsayg">via Imgflip</a></p></div>
+<img hrfe="https://imgflip.com/gif/5jsayg">
 
 <h3>Featured 1: FILTER EVENTS BY CITY</h3>
 <p>As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.</p>
