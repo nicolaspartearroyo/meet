@@ -58,17 +58,6 @@ class App extends Component {
     this.mounted = false;
   }
 
-  // Count how many events has each city
-  getData = () => {
-    const { locations, events } = this.state;
-    const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location).length
-      const city = location.split(', ').shift()
-      return { city, number };
-    })
-    return data;
-  };
-
   updateEvents = (location, eventCount) => {
     let locationEvents;
     getEvents().then((events) => {
@@ -88,6 +77,17 @@ class App extends Component {
     });
   };
 
+  // Count how many events has each city
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return { city, number };
+    })
+    return data;
+  };
+
   render() {
     if (this.state.showWelcomeScreen)
       return (
@@ -98,13 +98,13 @@ class App extends Component {
           }}
         />
       );
-    const { locations, numberOfEvents, events } = this.state;
+    const { events } = this.state;
     return (
       <div className="App">
         <WarningAlert text={this.state.infoText} />
         <img src={logo} alt="Logo" class="logo" />
         <CitySearch
-          locations={locations}
+          locations={this.state.locations}
           updateEvents={this.updateEvents}
           numberOfEvents={this.state.numberOfEvents}
         />
@@ -129,7 +129,8 @@ class App extends Component {
             </ScatterChart>
           </ResponsiveContainer>
         </div>
-        <EventList events={events} />
+        <EventList events={this.state.events}
+        />
       </div>
     );
   }

@@ -43,7 +43,7 @@ class CitySearch extends Component {
       showSuggestions: false
     });
 
-    this.props.updateEvents(suggestion, this.props.numberOfEvents);
+    this.props.updateEvents(suggestion, 0);
   };
 
   render() {
