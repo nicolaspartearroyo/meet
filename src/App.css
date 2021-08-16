@@ -178,7 +178,7 @@ input[type="number"] {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .google-btn:hover {
-  box-shadow: 0 0 6px #4285f4;
+  box-shadow: 0 0 10px #4285f4;
 }
 .google-btn:active {
   background: #1669f2;
