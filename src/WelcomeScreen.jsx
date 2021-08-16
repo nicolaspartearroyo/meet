@@ -1,11 +1,12 @@
 import React from "react";
 import './WelcomeScreen.css';
+import logo from './img/logo.png';
 
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ?
     (
       <div className="WelcomeScreen">
-        <h1>Welcome to the Meet app</h1>
+        <img src={logo} alt="Logo" class="logo" />
         <h4>
           Log in to see upcoming events around the world for
           full-stack

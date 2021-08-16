@@ -3,6 +3,10 @@ body {
 
 }
 
+.logo {
+  width: 50%;
+}
+
 .WelcomeScreen {
   position: fixed;
   text-align: center;
@@ -15,9 +19,8 @@ body {
   background-color: white;
   margin-left: 15%;
   margin-right: 10%;
-  
-
   }
+  
   .login-button {
   color: #494949;
   text-transform: uppercase;

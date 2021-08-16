@@ -7,6 +7,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
 import WelcomeScreen from './WelcomeScreen';
+import logo from './img/logo.png';
 
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { WarningAlert } from './Alert';
@@ -102,7 +103,7 @@ class App extends Component {
     return (
       <div className="App">
         <WarningAlert text={this.state.infoText} />
-        <h1>Meet App</h1>
+        <img src={logo} alt="Logo" class="logo" />
         <CitySearch updateEvents={this.updateEvents} locations={locations} />
         <NumberOfEvents
           updateEvents={this.updateEvents}
