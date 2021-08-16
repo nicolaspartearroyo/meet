@@ -1,7 +1,5 @@
 <h1>Meet App</h1>
-<p>To build a serverless, progressive web application (PWA) with React using a test-driven
-development (TDD) technique. The application uses the Google Calendar API to fetch
-upcoming events.</p>
+<p>TA serverless PWA using Create React App that can display and filter meetup events from the Google calender API. It is developed using Test-Drive-Development techniques to ensure a high test coverage rate.</p>
 
 <h3>Featured 1: FILTER EVENTS BY CITY</h3>
 <p>As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.</p>
