@@ -3,6 +3,14 @@
 
 ![Gif](./public/readme.gif)
 
+<h4>Key Features</h4>
+<li>Filter events by city.</li>
+<li>Show/hide event details.</li>
+<li>Specify number of events.</li>
+<li>Use the app when offline.</li>
+<li>Add an app shortcut to the home screen.</li>
+<li>View a chart showing the number of upcoming events by city.</li>
+<h4>User Stories</h4>
 <h3>Featured 1: FILTER EVENTS BY CITY</h3>
 <p>As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.</p>
 
